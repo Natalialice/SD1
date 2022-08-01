@@ -5,7 +5,7 @@ pipeline {
         // Install the Maven version configured as "M3" and add it to the path.
         maven "M3"
     }
-parameters {
+    parameters {
         gitParameter branchFilter: 'origin/(.*)', defaultValue: 'master', description: 'Select branch to run tests', name: 'BRANCH', type: 'PT_BRANCH'
     }
 
@@ -13,7 +13,7 @@ parameters {
         stage('Build') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: '${params.BRANCH}', url: 'https://github.com/Natalialice/SD1.git'
+                git branch: "${params.BRANCH}", url: 'https://github.com/Natalialice/SD1.git'
 
                 // Run Maven on a Unix agent.
                 // sh "mvn -Dmaven.test.failure.ignore=true clean package"
