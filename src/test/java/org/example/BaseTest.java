@@ -43,10 +43,10 @@ public class BaseTest {
             log.info("password? - {}", System.getenv("password"));
             options.setHeadless(isHeadless != null && Boolean.parseBoolean(isHeadless));
             driver = new ChromeDriver(options);
-        } else if (browser.equals("edge")) {
-            WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
-        }
+     } //else if (browser.equals("edge")) {
+//            WebDriverManager.edgedriver().setup();
+//            driver = new EdgeDriver();
+//        }
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         //Set up driver settings
